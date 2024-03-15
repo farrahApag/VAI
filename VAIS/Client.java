@@ -1,7 +1,5 @@
+package VAIS;
 //package VAI;
-
-import java.util.Scanner;
-import java.util.Map;
 
 public class Client {
 	 private String name;
