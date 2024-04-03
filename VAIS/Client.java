@@ -2,16 +2,16 @@ package VAIS;
 //package VAI;
 
 public class Client {
-	 private String name;
+	 private String ClientName;
 	    private double totalBilledAmount;
 
-	    public Client(String name) {
-	        this.name = name;
+	    public Client(String ClientName) {
+	        this.ClientName = ClientName;
 	        this.totalBilledAmount = 0.0;
 	    }
 
-	    public String getName() {
-	        return name;
+	    public String getClientName() {
+	        return ClientName;
 	    }
 
 	    public double getTotalBilledAmount() {
@@ -24,7 +24,7 @@ public class Client {
 
 	    @Override
 	    public String toString() {
-	        return "Client Name: " + name + "\nTotal Billed Amount: $" + totalBilledAmount;
+	        return "Client Name: " + ClientName + "\nTotal Billed Amount: $" + totalBilledAmount;
 	    }
 	}
 

@@ -9,7 +9,7 @@ package VAIS;
         private List<Service> services;
         private double totalAmount;
     
-        public Invoice(int invoiceId, String clientName) {
+        public Invoice(int invoiceId, String clientName, String serviceName, int hours, double amount) {
             this.invoiceId = invoiceId;
             this.clientName = clientName;
             this.services = new ArrayList<>();
@@ -28,17 +28,17 @@ package VAIS;
             return totalAmount;
         }
     
-        public void addService(String serviceName, int hours, double amount) {
-            services.add(new Service(serviceName, hours, amount));
+        public void addService(String serviceName, int getRatePerHour, double amount) {
+            services.add(new Service(serviceName, getRatePerHour));
             totalAmount += amount;
         }
     
         public void updateServiceHours(String serviceName, int newHours) {
             for (Service service : services) {
                 if (service.getServiceName().equalsIgnoreCase(serviceName)) {
-                    totalAmount -= service.getAmount(); // Subtract old amount
+                    totalAmount -= service.getRatePerHour(); // Subtract old amount
                     service.setHours(newHours);
-                    totalAmount += service.getAmount(); // Add new amount
+                    totalAmount += service.getRatePerHour(); // Add new amount
                     break;
                 }
             }
@@ -55,6 +55,4 @@ package VAIS;
                     ", Total Amount: $" + totalAmount +
                     ", Services: " + services;
         }
-    }
-    
-}
+    }   

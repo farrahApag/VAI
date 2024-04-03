@@ -103,7 +103,7 @@ public class ClientMangementSystem {
 	        } else {
 	            System.out.println("Total Billed Amount for Each Client:");
 	            for (Client client : clients.values()) {
-	                System.out.println(client.getName() + ": $" + client.getTotalBilledAmount());
+	                System.out.println(client.getClientName() + ": $" + client.getTotalBilledAmount());
 	            }
 	        }
 	    }

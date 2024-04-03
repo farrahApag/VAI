@@ -41,6 +41,8 @@ public class ServiceManagement {
                     break;
                 case 0:
                     System.out.println("Exiting service management...");
+                    Menu menu = new Menu();
+                    menu.startMenu();
                     break;
                 default:
                     System.out.println("Invalid choice! Please enter a valid option.");
@@ -75,7 +77,7 @@ public class ServiceManagement {
         if (services.containsKey(serviceName)) {
             System.out.print("Enter new billed hours: ");
             int newBilledHours = scanner.nextInt();
-            services.get(serviceName).setBilledHours(newBilledHours);
+            services.get(serviceName).getRatePerHour(newBilledHours);
             System.out.println("Service information updated successfully!");
         } else {
             System.out.println("Service not found!");
@@ -99,7 +101,7 @@ public class ServiceManagement {
         } else {
             System.out.println("Total Billed Hours for Each Service:");
             for (Service service : services.values()) {
-                System.out.println(service.getServiceName() + ": " + service.getBilledHours() + " hours");
+                System.out.println(service.getServiceName() + ": " + service.getRatePerHour() + " hours");
             }
         }
     }

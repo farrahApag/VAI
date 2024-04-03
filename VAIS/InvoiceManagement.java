@@ -2,7 +2,7 @@ package VAIS;import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class InvoiceManagementSystem{
+public class InvoiceManagement{
 
     private Map<Integer, Invoice> invoices = new HashMap<>();
     private Scanner scanner = new Scanner(System.in);
@@ -45,6 +45,8 @@ public class InvoiceManagementSystem{
                     break;
                 case 0:
                     System.out.println("Exiting invoice management...");
+                    Menu menu = new Menu();
+                    menu.startMenu();
                     break;
                 default:
                     System.out.println("Invalid choice! Please enter a valid option.");
@@ -137,7 +139,7 @@ public class InvoiceManagementSystem{
     }
 
     public static void main(String[] args) {
-        InvoiceManagementSystem invoiceManagementSystem = new InvoiceManagementSystem();
-        invoiceManagementSystem.startInvoiceManagement();
+        InvoiceManagement invoiceManagement = new InvoiceManagement();
+        invoiceManagement.startInvoiceManagement();
     }
 }

@@ -1,4 +1,4 @@
-package VAIS;
+package extra;
 
 import java.util.Scanner;
 
@@ -6,20 +6,19 @@ import VAIS.ClientManagementSystem;
 import VAIS.InvoiceManagement;
 import VAIS.ServiceManagement;
 
-public class Menu {
+public class menu {
     public void startMenu() {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
         do{
-        System.out.println("");
         System.out.println("-------------");
         System.out.println("Menu");
         System.out.println("1. Client Management");
         System.out.println("2. Serviice Mangement");
         System.out.println("3. Invoice Mangement");
         System.out.println("4. Analytic");
-        System.out.println("5. Additional Features");
+        System.out.println("5.Additional Features");
         System.out.print("Choose a number:");
         choice = scanner.nextInt();
 
@@ -42,14 +41,12 @@ public class Menu {
                     //analyticsManager.startAnalyticsManager();
                     break;
             case 5:
-                    AdditionalFeatures additionaFeatures = new AdditionalFeatures();
-                    additionaFeatures.displayMenu(scanner);
                     break;
         }
         } while (choice != 0);
     }
     public static void main(String[] args) {
-        Menu menuInstance = new Menu();
+        menu menuInstance = new menu();
         menuInstance.startMenu(); // Start the menu system
     }
 }

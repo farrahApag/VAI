@@ -45,6 +45,9 @@ public class ClientManagementSystem {
 	                case 0:
 	                    System.out.println("Exiting client management...");
 	                    System.out.print("");
+
+						Menu menu = new Menu();
+                        menu.startMenu();
 	                    break;
 	                default:
 	                    System.out.println("Invalid choice! Please enter a valid option.");
@@ -103,7 +106,7 @@ public class ClientManagementSystem {
 	        } else {
 	            System.out.println("Total Billed Amount for Each Client:");
 	            for (Client client : clients.values()) {
-	                System.out.println(client.getName() + ": $" + client.getTotalBilledAmount());
+	                System.out.println(client.getClientName() + ": $" + client.getTotalBilledAmount());
 	            }
 	        }
 	    }
